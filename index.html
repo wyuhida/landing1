@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind css</title>
+    <!-- favicon link -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <!-- google font link -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- tailwind css cdn -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- ionicons cdn -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <!-- alpine js cdn -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- style css -->
+    <style type="text/tailwindcss">
+        body{
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    
+
+<!-- ====== header ====== -->
+
+
+<header x-data="{navbarOpen: false}" class="absolute sticky left-0 top-0 z-50 bg-white/90 w-full backdrop-blur">
+    <div class="mx-auto h-[90px] max-w-7xl px-8 md:px-6">
+        <div class="relative flex h-full items-center justify-between border-b border-slate-500/10">
+            <!-- logo -->
+            <div class="w-[15rem] max-w-full">
+                <a href="#" class="text-lg font-bold text-slate-800 hover:text-blue-600">
+                    PJTKIJATENG
+                </a>
+            </div>
+
+            <!-- menu -->
+            <div class="flex w-full items-center justify-between">
+                <nav x-transition :class="!navbarOpen && 'hidden'" id="navbarCollapse" class="absolute right-0 top-[90px] w-full max-w-[350px] rounded-lg border border-blue-200 bg-white py-5 px-6 shadow-lg shadow-blue-400/5 transition-all lg:static lg:block lg:max-w-full lg:border-none lg:shadow-none lg:bg-transparent lg:px-0 lg:py-0">
+                    <ul class="flex flex-col justify-center gap-8 lg:flex-row">
+                        <li>
+                            <a href=""  class="text-lg font-medium text-slate-700 duration-200 hover:text-blue-600 lg:text-base">Home</a>
+                        </li>
+                        <li>
+                            <p><a href="#ttk"  class="text-lg font-medium text-slate-700 duration-200 hover:text-blue-600 lg:text-base">Tentang Kami</a></p>
+
+                        </li>
+                        <li>
+                            <a href="#" class="text-lg font-medium text-slate-700 duration-200 hover:text-blue-600 lg:text-base">Negara Tujuan</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-lg font-medium text-slate-700 duration-200 hover:text-blue-600 lg:text-base">Galeri</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-lg font-medium text-slate-700 duration-200 hover:text-blue-600 lg:text-base">Blog</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-lg font-medium text-slate-700 duration-200 hover:text-blue-600 lg:text-base">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- menu btn -->
+            <div class="flex">
+                <!-- <a href="#" class="mr-10 hidden rounded-md bg-blue-500 px-8 py-2.5 font-semibold text-white shadow-md shadow-blue-500/20 duration-200 hover:bg-blue-600 sm:block lg:mr-0">Register</a> -->
+
+                <button @click="navbarOpen = !navbarOpen" :class="navbarOpen && 'navbarTogglerActive'" id="navbarToggler" class="block lg:hidden">
+                    <ion-icon name="menu-outline" class="text-4xl text-blue-500"></ion-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- ====== END header ====== -->
+
+
+<!-- ====== hero ====== -->
+
+<section  class="relative bg-white py-16 lg:pt-[100px]">
+    <div class="mx-auto max-w-7xl px-8 md:px-6">
+        <div class="flex flex-wrap">
+            <div class="w-full lg:w-5/12">
+                <h1 class="text-slate-800 mb-3 text-4xl font-bold leading-snug sm:text-[42px] lg:text-[40px] xl:text-[42px]">jadikan masa depanmu  <span class="text-blue-600">lebih baik</span></h1>
+                <p class="text-slate-500 mb-8 max-w-[480px] text-base">Kami adalah Perusahaan Jasa Tenaga Kerja Indonesia  yang mempunyai tugas melaksanakan kegiatan penempatan tenaga kerja sesuai dengan proses Antar Kerja baik di dalam maupun ke luar negeri </p>
+                
+                
+                <a  href=""
+                    class="rounded-md bg-[#25D366]  px-5 py-2.5 font-semibold text-white shadow-md shadow-blue-500/20 hover:bg-[#075E54]/90 duration-200 sm:w-auto inline-flex items-center">
+                    <ion-icon name="logo-whatsapp" class="mr-2 -ml-1 w-7 h-7"></ion-icon>
+                    Konsultasi Sekarang
+                </a>
+
+            </div>
+
+            <div class="hidden px-4 lg:block lg:w-1/12"></div>
+
+            <div class="w-full px-4 lg:w-6/12">
+                <div class="lg:ml-auto lg:text-right">
+                    <div class="relative z-10 inline-block pt-11 lg:pt-0">
+                        <img src="images/hero2.png" alt="hero section img" class="max-w-full lg:ml-auto">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ====== END hero ====== -->
+
+
+<!-- ====== features ====== -->
+
+<!-- ====== about ====== -->
+
+<section  class="py-16">
+    <div  class="mx-auto max-w-7xl px-8 md:px-6">
+        <div class="md:flex md:justify-between md:gap-6">
+            <div class="md:w-6/12">
+                 <!-- heading text -->
+                <div class="mb-5 sm:mb-10" >
+                    <span class="font-medium text-blue-500" id="#ttk" >Tentang Kami</span>
+                    <h1 class="text-2xl font-bold text-slate-700 sm:text-3xl">PJTKIJATENG</h1>
+                </div>
+                <p class="text-slate-500 mb-6">
+                    PJTKIJATENG adalah sebuah perusahaan pelaksana penempatan tenaga kerja indonesia swasta yang
+                    menempatkan tenaga kerja indonesia ke luar negeri baik di sektor formal maupun informal dengan 
+                    tujuan penempatan yaitu taiwan, hongkong, singapore, malaysia 
+                </p>
+                <!-- <ul>
+                    <li class="mb-6 flex items-center">
+                        <div class="flex h-[35px] w-[35px] min-w-[35px] items-center justify-center rounded-full bg-blue-500 text-white">
+                            <ion-icon name="briefcase-outline"></ion-icon>
+                        </div>
+                        <p class="ml-4 max-w-md font-medium text-slate-600">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </li>
+                    <li class="mb-6 flex items-center">
+                        <div class="flex h-[35px] w-[35px] min-w-[35px] items-center justify-center rounded-full bg-blue-500 text-white">
+                            <ion-icon name="cube-outline"></ion-icon>
+                        </div>
+                        <p class="ml-4 max-w-md font-medium text-slate-600">Omnis unde nam quia harum voluptatum itaque iste nostrum amet vero.</p>
+                    </li>
+                    <li class="mb-6 flex items-center">
+                        <div class="flex h-[35px] w-[35px] min-w-[35px] items-center justify-center rounded-full bg-blue-500 text-white">
+                            <ion-icon name="mail-unread-outline"></ion-icon>
+                        </div>
+                        <p class="ml-4 max-w-md font-medium text-slate-600">Id quos et quidem perspiciatis similique! Rerum, natus temporibus.</p>
+                    </li>
+                </ul>
+                 <button class="w-full rounded-md bg-blue-500 px-8 py-2.5 font-semibold text-white shadow-md shadow-blue-500/20 hover:bg-blue-600 duration-200 md:w-max">Get Started</button> -->
+            </div>
+
+            <!-- about img -->
+            <div class="mt-8 flex justify-center md:mt-0 md:w-5/12">
+                <img src="images/office.jpg" alt="about img" class="max-h-[500px] md:max-h-max">
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ====== END about ====== -->
+
+
+<!-- ====== END features ====== -->
+
+
+
+
+
+<!-- ====== service ====== -->
+<section class="py-16">
+    <div class="mx-auto max-w-7xl px-8 md:px-6">
+        <!-- heading text -->
+        <div class="mb-10 text-center">
+            <span class="font-medium text-blue-500">Negara Tujuan</span>
+            <h1 class="text-2xl font-bold text-slate-700 sm:text-3xl">Negara Yang Di Tuju</h1>
+        </div>
+
+        <!-- box wrapper -->
+        <div class="grid gap-6 sm:grid-cols-1 md:grid-cols-2 xl:gap-8">
+            <div class="group flex cursor-pointer flex-col items-center rounded-xl border border-blue-500/10 bg-white px-5 py-8 shadow-lg shadow-blue-300/10 duration-200 hover:bg-blue-500">
+                <img class=" w-24 h-24 text-blue-500 duration-200 group-hover:text-white rounded-full" src="images/taiwan.png" alt="" srcset="">
+                <h4 class="mt-3 mb-1 text-[17px] font-semibold text-slate-600 duration-200 group-hover:text-white">Taiwan</h4>
+                <p class="text-center text-sm text-slate-500 duration-200 group-hover:text-blue-200">
+                    Gaji pokok NT 17.000 atau Rp. 8.500.000 <br>
+                    dapat pinjaman (Living Cost) Rp. 3.000.000 s/d 5.000.000
+                </p>
+            </div>
+
+            <div class="group flex cursor-pointer flex-col items-center rounded-xl border border-blue-500/10 bg-white px-5 py-8 shadow-lg shadow-blue-300/10 duration-200 hover:bg-blue-500">
+                <img class=" w-24 h-24 text-blue-500 duration-200 group-hover:text-white rounded-full" src="images/hong-kong.png" alt="" srcset="">
+                <h4 class="mt-3 mb-1 text-[17px] font-semibold text-slate-600 duration-200 group-hover:text-white">Hongkong</h4>
+                <p class="text-center text-sm text-slate-500 duration-200 group-hover:text-blue-200">
+                    Gaji pokok HKD 4520 atau Rp. 8.100.000 <br>
+                    dapat pinjaman (Living Cost) Rp. 3.000.000 s/d 5.000.000
+                </p>
+            </div>
+
+            <div class="group flex cursor-pointer flex-col items-center rounded-xl border border-blue-500/10 bg-white px-5 py-8 shadow-lg shadow-blue-300/10 duration-200 hover:bg-blue-500">
+                <img class=" w-24 h-24 text-blue-500 duration-200 group-hover:text-white rounded-full" src="images/singapore.png" alt="" srcset="">
+                <h4 class="mt-3 mb-1 text-[17px] font-semibold text-slate-600 duration-200 group-hover:text-white">Singapore</h4>
+                <p class="text-center text-sm text-slate-500 duration-200 group-hover:text-blue-200">
+                    Gaji pokok SGD 550 + SGD 80 (Off Day) atau Rp. 6.800.000 <br>
+                    dapat pinjaman (Living Cost) Rp. 4.000.000
+                </p>
+            </div>
+
+            <div class="group flex cursor-pointer flex-col items-center rounded-xl border border-blue-500/10 bg-white px-5 py-8 shadow-lg shadow-blue-300/10 duration-200 hover:bg-blue-500">
+                <img class=" w-24 h-24 text-blue-500 duration-200 group-hover:text-white rounded-full" src="images/malaysia_rounded.png" alt="" srcset="">
+                <h4 class="mt-3 mb-1 text-[17px] font-semibold text-slate-600 duration-200 group-hover:text-white">Malaysia</h4>
+                <cla class="text-center text-sm text-slate-500 duration-200 group-hover:text-blue-200">
+                    Gaji pokok RM 1100 atau Rp. 4.200.000 <br>
+                    dapat pinjaman (Living Cost) Rp. 6.000.000
+                </p>
+            </div>
+
+            <!-- <div class="group flex cursor-pointer flex-col items-center rounded-xl border border-blue-500/10 bg-white px-5 py-8 shadow-lg shadow-blue-300/10 duration-200 hover:bg-blue-500">
+                <ion-icon name="file-tray-full-outline" class="text-[55px] text-blue-500 duration-200 group-hover:text-white"></ion-icon>
+                <h4 class="mt-3 mb-1 text-[17px] font-semibold text-slate-600 duration-200 group-hover:text-white">All Essential Sections</h4>
+                <p class="text-center text-sm text-slate-500 duration-200 group-hover:text-blue-200">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe accusamus nihil veritatis ad. Odit, veritatis!</p>
+            </div> -->
+
+            <!-- <div class="group flex cursor-pointer flex-col items-center rounded-xl border border-blue-500/10 bg-white px-5 py-8 shadow-lg shadow-blue-300/10 duration-200 hover:bg-blue-500">
+                <ion-icon name="cloud-download-outline" class="text-[55px] text-blue-500 duration-200 group-hover:text-white"></ion-icon>
+                <h4 class="mt-3 mb-1 text-[17px] font-semibold text-slate-600 duration-200 group-hover:text-white">Regular Updates</h4>
+                <p class="text-center text-sm text-slate-500 duration-200 group-hover:text-blue-200">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe accusamus nihil veritatis ad. Odit, veritatis!</p>
+            </div> -->
+        </div>
+    </div>
+</section>
+
+<!-- ====== END service ====== -->
+
+
+<!-- ====== Portfolio ====== -->
+
+<section class="py-16">
+    <div class="mx-auto max-w-7xl px-8 md:px-6">
+        <!-- heading text -->
+        <div class="mb-10 text-center">
+            <span class="font-medium text-blue-500">Galeri</span>
+            <h1 class="text-2xl font-bold text-slate-700 sm:text-3xl">Galeri Terbaru Kami</h1>
+            <!-- <p class="mx-auto max-w-2 mt-2 text-slate-500">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur deleniti sit dolor numquam non. Et.</p> -->
+        </div>
+        <!-- wrapper -->
+        <div class="flex flex-col gap-5">
+            <!-- col-1 -->
+            <div class="grid gap-5 sm:grid-cols-2 md:grid-cols-4">
+                <div class="group relative h-40 overflow-hidden rounded-lg lg:h-52">
+                    <img src="images/portfolio/p-1.png" alt="portfolio img" class="absolute h-full w-full object-cover duration-200 group-hover:scale-125">
+                    <div class="absolute -bottom-60 flex w-full cursor-pointer items-center justify-between bg-gradient-to-t from-slate-800 px-3 pb-4 pt-10 duration-200 group-hover:-bottom-0">
+                        <p class="text-sm font-semibold text-white">Galeri 1 <span class="text-xs text-slate-300 block">12 August 2022</span></p>
+                        <ion-icon name="heart" class="rounded-full bg-white p-1.5 text-lg text-blue-500"></ion-icon>
+                    </div>
+                </div>
+                <div class="group relative h-40 overflow-hidden rounded-lg lg:h-52">
+                    <img src="images/portfolio/p-2.png" alt="portfolio img" class="absolute h-full w-full object-cover duration-200 group-hover:scale-125">
+                    <div class="absolute -bottom-60 flex w-full cursor-pointer items-center justify-between bg-gradient-to-t from-slate-800 px-3 pb-4 pt-10 duration-200 group-hover:-bottom-0">
+                        <p class="text-sm font-semibold text-white">Galeri 2 <span class="text-xs text-slate-300 block">12 August 2022</span></p>
+                        <ion-icon name="heart" class="rounded-full bg-white p-1.5 text-lg text-blue-500"></ion-icon>
+                    </div>
+                </div>
+                <div class="group relative h-40 overflow-hidden rounded-lg lg:h-52 sm:col-span-2">
+                    <img src="images/portfolio/p-3.png" alt="portfolio img" class="absolute h-full w-full object-cover duration-200 group-hover:scale-125">
+                    <div class="absolute -bottom-60 flex w-full cursor-pointer items-center justify-between bg-gradient-to-t from-slate-800 px-3 pb-4 pt-10 duration-200 group-hover:-bottom-0">
+                        <p class="text-sm font-semibold text-white">Galeri 3 <span class="text-xs text-slate-300 block">12 August 2022</span></p>
+                        <ion-icon name="heart" class="rounded-full bg-white p-1.5 text-lg text-blue-500"></ion-icon>
+                    </div>
+                </div>
+            </div>
+            <!-- end col-1 -->
+
+            <!-- col-2 -->
+            <div class="grid gap-5 sm:grid-cols-2 md:grid-cols-3">
+                <div class="group relative h-40 overflow-hidden rounded-lg lg:h-52 md:col-span-2">
+                    <img src="images/portfolio/p-4.png" alt="portfolio img" class="absolute h-full w-full object-cover duration-200 group-hover:scale-125">
+                    <div class="absolute -bottom-60 flex w-full cursor-pointer items-center justify-between bg-gradient-to-t from-slate-800 px-3 pb-4 pt-10 duration-200 group-hover:-bottom-0">
+                        <p class="text-sm font-semibold text-white">Galeri 4 <span class="text-xs text-slate-300 block">12 August 2022</span></p>
+                        <ion-icon name="heart" class="rounded-full bg-white p-1.5 text-lg text-blue-500"></ion-icon>
+                    </div>
+                </div>
+                <div class="group relative h-40 overflow-hidden rounded-lg lg:h-52">
+                    <img src="images/portfolio/p-5.png" alt="portfolio img" class="absolute h-full w-full object-cover duration-200 group-hover:scale-125">
+                    <div class="absolute -bottom-60 flex w-full cursor-pointer items-center justify-between bg-gradient-to-t from-slate-800 px-3 pb-4 pt-10 duration-200 group-hover:-bottom-0">
+                        <p class="text-sm font-semibold text-white">Galeri 5 <span class="text-xs text-slate-300 block">12 August 2022</span></p>
+                        <ion-icon name="heart" class="rounded-full bg-white p-1.5 text-lg text-blue-500"></ion-icon>
+                    </div>
+                </div>
+            </div>
+            <!-- end col-2 -->
+
+            <!-- col-3 -->
+            <div class="grid gap-5 sm:grid-cols-2 md:grid-cols-4">
+                <div class="group relative h-40 overflow-hidden rounded-lg lg:h-52">
+                    <img src="images/portfolio/p-6.png" alt="portfolio img" class="absolute h-full w-full object-cover duration-200 group-hover:scale-125">
+                    <div class="absolute -bottom-60 flex w-full cursor-pointer items-center justify-between bg-gradient-to-t from-slate-800 px-3 pb-4 pt-10 duration-200 group-hover:-bottom-0">
+                        <p class="text-sm font-semibold text-white">Galeri 6 <span class="text-xs text-slate-300 block">12 August 2022</span></p>
+                        <ion-icon name="heart" class="rounded-full bg-white p-1.5 text-lg text-blue-500"></ion-icon>
+                    </div>
+                </div>
+                <div class="group relative h-40 overflow-hidden rounded-lg lg:h-52">
+                    <img src="images/portfolio/p-7.png" alt="portfolio img" class="absolute h-full w-full object-cover duration-200 group-hover:scale-125">
+                    <div class="absolute -bottom-60 flex w-full cursor-pointer items-center justify-between bg-gradient-to-t from-slate-800 px-3 pb-4 pt-10 duration-200 group-hover:-bottom-0">
+                        <p class="text-sm font-semibold text-white">Galeri 7 <span class="text-xs text-slate-300 block">12 August 2022</span></p>
+                        <ion-icon name="heart" class="rounded-full bg-white p-1.5 text-lg text-blue-500"></ion-icon>
+                    </div>
+                </div>
+                <div class="group relative h-40 overflow-hidden rounded-lg lg:h-52 sm:col-span-2">
+                    <img src="images/portfolio/p-8.png" alt="portfolio img" class="absolute h-full w-full object-cover duration-200 group-hover:scale-125">
+                    <div class="absolute -bottom-60 flex w-full cursor-pointer items-center justify-between bg-gradient-to-t from-slate-800 px-3 pb-4 pt-10 duration-200 group-hover:-bottom-0">
+                        <p class="text-sm font-semibold text-white">Galeri 8 <span class="text-xs text-slate-300 block">12 August 2022</span></p>
+                        <ion-icon name="heart" class="rounded-full bg-white p-1.5 text-lg text-blue-500"></ion-icon>
+                    </div>
+                </div>
+            </div>
+            <!-- end col-3 -->
+        </div>
+    </div>
+</section>
+<!-- ====== END Portfolio ====== -->
+
+
+<!-- ====== Contact ====== -->
+
+
+<section class="relative overflow-hidden py-16">
+    <img src="images/effect.png" alt="effect" class="absolute bottom-[-400px] -z-10 w-full opacity-[0.2]">
+    <div class="mx-auto max-w-7xl px-8 md:px-6">
+        <div class="-mx-4 flex flex-wrap lg:justify-between">
+
+            <!-- left info-->
+            <div class="w-full px-4 md:w-1/2 xl:w-6/12">
+                <div class="mb-12 max-w-[570px] lg:mb-0">
+                    <span class="font-medium text-blue-500">Kontak Kami</span>
+                    <h1 class="mb-3 text-2xl font-bold text-slate-700 sm:text-3xl">Hubungi Kami</h1>
+                   
+                    
+                    <!-- address -->
+                    <div class="mb-8 flex w-full max-w-[420px] items-center rounded-lg bg-white p-4 shadow-md shadow-blue-500/10">
+                        <div class="mr-6 flex h-[60px] w-full max-w-[60px] items-center justify-center overflow-hidden rounded bg-blue-500 bg-opacity-5 text-blue-500 sm:h-[70px] sm:max-w-[70px]">
+                            <ion-icon name="location-outline" class="text-3xl"></ion-icon>
+                        </div>
+                        <div class="w-full">
+                            <h4 class="mb-1 text-xl font-bold text-slate-700">Alamat</h4>
+                            <p class="text-base text-slate-400
+                            ">DS.Krendeng RT.03/02 KEC.Puring Kab.Kebumen</p>
+                        </div>
+                    </div>
+                    <!-- phone -->
+                    <div class="mb-8 flex w-full max-w-[420px] items-center rounded-lg bg-white p-4 shadow-md shadow-blue-500/10">
+                        <div class="mr-6 flex h-[60px] w-full max-w-[60px] items-center justify-center overflow-hidden rounded bg-blue-500 bg-opacity-5 text-blue-500 sm:h-[70px] sm:max-w-[70px]">
+                            <ion-icon name="call-outline" class="text-3xl"></ion-icon>
+                        </div>
+                        <div class="w-full">
+                            <h4 class="mb-1 text-xl font-bold text-slate-700">Nomor Telepon</h4>
+                            <p class="text-base text-slate-400
+                            ">+62 838-6324-5455</p>
+                        </div>
+                    </div>
+                    <!-- mail -->
+                    <div class="mb-8 flex w-full max-w-[420px] items-center rounded-lg bg-white p-4 shadow-md shadow-blue-500/10">
+                        <div class="mr-6 flex h-[60px] w-full max-w-[60px] items-center justify-center overflow-hidden rounded bg-blue-500 bg-opacity-5 text-blue-500 sm:h-[70px] sm:max-w-[70px]">
+                            <ion-icon name="mail-outline" class="text-3xl"></ion-icon>
+                        </div>
+                        <div class="w-full">
+                            <h4 class="mb-1 text-xl font-bold text-slate-700">Email</h4>
+                            <p class="text-base text-slate-400
+                            ">pjtkijateng@gmail.com</p>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <!-- right contact-->
+            <div class="w-full px-4 md:w-1/2 xl:w-5/12">
+                <div class="relative rounded-lg bg-white p-8 shadow-lg shadow-blue-500/10 sm:p-12">
+                    <form action="">
+                        <div class="mb-6">
+                            <input type="text" placeholder="Namae" class="w-full rounded-lg border border-blue-500/20 px-4 py-3 text-slate-500 focus:border-blue-500 focus:outline-none">
+                        </div>
+                        <div class="mb-6">
+                            <input type="email" placeholder="Email" class="w-full rounded-lg border border-blue-500/20 px-4 py-3 text-slate-500 focus:border-blue-500 focus:outline-none">
+                        </div>
+                        <div class="mb-6">
+                            <textarea name="message" rows="6" class="resize-none w-full rounded-lg border border-blue-500/20 px-4 py-3 text-slate-500 focus:border-blue-500 focus:outline-none"></textarea>
+                        </div>
+                        <div class="">
+                            <button type="submit" class="w-full rounded border border-blue-300 bg-blue-500 p-3 text-white transition-all hover:bg-opacity-90">Kirim Pesan</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ====== END Contact ====== -->
+
+<!-- ====== footer ====== -->
+
+<footer class="bg-slate-50/80 pt-16">
+    <div class="mx-auto max-w-7xl px-8 md:px-6">
+
+    
+
+        <!-- footer bottom -->
+        <div class="flex flex-col justify-between border-t py-8 sm:flex-row">
+            <p class="text-sm text-slate-500">© Copyright 2022 <a href="#" class="text-slate-700 hover:text-blue-500"> PJTKIJATENG</a> All rights reserved.</p>
+            <div class="mt-4 flex items-center space-x-4 sm:mt-0">
+                <a href="#">
+                    <ion-icon name="logo-facebook" class="text-2xl text-slate-500 hover:text-blue-500 duration-300"></ion-icon>
+                </a>
+                <a href="#">
+                    <ion-icon name="logo-twitter" class="text-2xl text-slate-500 hover:text-blue-500 duration-300"></ion-icon>
+                </a>
+                <a href="#">
+                    <ion-icon name="logo-youtube" class="text-2xl text-slate-500 hover:text-blue-500 duration-300"></ion-icon>
+                </a>
+            </div>
+        </div>
+        <!-- End footer bottom -->
+
+    </div>
+</footer>
+
+<!-- ====== END footer ====== -->
+
+
+
+</body>
+</html>
